@@ -5,18 +5,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by grapheople on 2016. 4. 22..
+ * @author Steven
+ * @since  v1.0.0
  */
 
 @RestController
 @EnableAutoConfiguration
 public class Example {
-    @RequestMapping("/")
-    String home() {
-        return "hello world!";
-    }
+  @RequestMapping("/")
+  public String home() {
+    return "hello world!";
+  }
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(Example.class, args);
-    }
+  /**
+   * Description.
+   * @param args  asdasd
+   * @throws Exception asd
+   */
+  public static void main(String[] args) throws Exception {
+    SpringApplication.run(Example.class, args);
+    test();
+  }
+
+  private static int test() {
+    return 5;
+  }
+
 }
