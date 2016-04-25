@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * @author Jason Park
- * @since v
+ * @since v1.0
  */
 public class ResponseObj implements Serializable {
 
@@ -24,5 +24,9 @@ public class ResponseObj implements Serializable {
 
   public ResponseObj(MessageCode messageCode) {
     this(messageCode.getCode(), messageCode.toString(), null);
+  }
+
+  public ResponseObj(MessageCode messageCode, Object object) {
+    this(messageCode.getCode(), messageCode.toString(), object);
   }
 }
