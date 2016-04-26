@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
  * @since v.
  */
 @ControllerAdvice(basePackageClasses = BasicController.class)
-public class BasicControllerAdvice {
-  @ExceptionHandler(NullPointerException.class)
+public class BasicControllerAdvice extends ResponseEntityExceptionHandler {
+  @ExceptionHandler(Exception.class)
   @ResponseBody
   ResponseEntity<?> handleControllerException(HttpServletRequest request, Throwable ex) {
     HttpStatus status = getStatus(request);
