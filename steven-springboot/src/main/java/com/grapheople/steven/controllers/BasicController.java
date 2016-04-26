@@ -23,4 +23,9 @@ public class BasicController {
     model.addAttribute("name", name);
     return "views/test";
   }
+
+  @RequestMapping("/advice")
+  public String advice(@RequestParam(value = "name", required = false, defaultValue = "World") String name, Model model) {
+    throw new NullPointerException();
+  }
 }
