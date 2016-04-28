@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
  * @since v1.0
  */
 @Component
-@ConfigurationProperties(prefix = "props")
-public class AppProps {
+@ConfigurationProperties(prefix = "constants")
+public class AppConstants {
 
   private String appName;
 
