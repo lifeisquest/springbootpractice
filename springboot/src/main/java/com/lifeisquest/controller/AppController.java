@@ -24,7 +24,7 @@ public class AppController {
   @Value("${app.server-url}")
   private String appServerUrl;
 
-  @Get("test")
+  @Get("/app/name")
   public ResponseObj getAppName() {
 
     return new ResponseObj(MessageCode.SUCCESS, this.appConstants.getAppName());
