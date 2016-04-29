@@ -2,7 +2,6 @@ package com.lifeisquest.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,7 +15,7 @@ import java.lang.annotation.Target;
  * @author Jason Park
  * @since v1.0
  */
-@Target({ElementType.METHOD, ElementType.TYPE})
+@Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @RequestMapping(

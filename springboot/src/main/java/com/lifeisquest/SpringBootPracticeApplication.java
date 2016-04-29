@@ -17,6 +17,9 @@ import org.springframework.context.annotation.Configuration;
 public class SpringBootPracticeApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootPracticeApplication.class, args);
+//    SpringApplication.run(SpringBootPracticeApplication.class, args);
+    SpringApplication app = new SpringApplication(SpringBootPracticeApplication.class);
+//    app.setAdditionalProfiles("prod");
+    app.run(args);
   }
 }
