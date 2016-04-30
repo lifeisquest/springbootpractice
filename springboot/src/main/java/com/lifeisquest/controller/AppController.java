@@ -5,6 +5,8 @@ import com.lifeisquest.model.AppConstants;
 import com.lifeisquest.util.MessageCode;
 import com.lifeisquest.util.ResponseObj;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api")
 public class AppController {
 
+  private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+
   @Autowired
   AppConstants appConstants;
 
@@ -25,14 +29,14 @@ public class AppController {
   private String appServerUrl;
 
   @Get("/app/name")
-  public ResponseObj getAppName() {
-
+  public ResponseObj getAppName() throws Exception {
+    logger.debug("AppName 1");
+    logger.info("AppName 2");
     return new ResponseObj(MessageCode.SUCCESS, this.appConstants.getAppName());
   }
 
   @Get("/app/url")
   public ResponseObj getAppUrl() {
-
     return new ResponseObj(MessageCode.SUCCESS, this.appServerUrl);
   }
 }

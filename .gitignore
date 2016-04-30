@@ -48,3 +48,6 @@ fabric.properties
 
 # git temporary file
 *.swp
+
+# log files
+*.log

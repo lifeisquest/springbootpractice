@@ -1,10 +1,13 @@
 package com.lifeisquest;
 
+import org.slf4j.MDC;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author Jason Park
@@ -17,6 +20,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpringBootPracticeApplication {
 
   public static void main(String[] args) {
+    MDC.put("user", "Jason");
 //    SpringApplication.run(SpringBootPracticeApplication.class, args);
     SpringApplication app = new SpringApplication(SpringBootPracticeApplication.class);
 //    app.setAdditionalProfiles("prod");
